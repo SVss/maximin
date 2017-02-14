@@ -1,6 +1,7 @@
 from math import sqrt
 from random import randrange
 from collections import defaultdict
+from statistics import mean
 
 
 def sqr(a):
@@ -22,7 +23,7 @@ def allocate_clusters(vectors, centroids):
 
 
 def average_centroids_distance(clusters: dict):
-    return sum([distance(x, y) for x in clusters.keys() for y in clusters.keys()]) / (len(clusters)**2)
+    return mean([distance(x, y) for x in clusters.keys() for y in clusters.keys()])
 
 
 def get_new_centroid_index(vectors, clusters):
